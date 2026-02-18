@@ -1,4 +1,7 @@
-course://web.dackend?name=%22Bohdan%20Rak%22&group=%22FEP23%22&subgroup=%22Subgroup%202%22#w1nzeen  
+course://web.backend?name=%22Bohdan%20Rak%22&group=%22FEP23%22&subgroup=%22Subgroup%202%22#w1nzeen  
+https://bank.gov.ua/NBU_Exchange/exchange_site?json&start=20220707&end=20220719&valcode=usd
 
-First task: course://web.dackend?name="Bohdan Rak"&group="FEP23"&subgroup="Subgroup 2"#w1nzeen
-encoded url: course://web.dackend?name=%22Bohdan%20Rak%22&group=%22FEP23%22&subgroup=%22Subgroup%202%22#w1nzeen    
+First task: course://web.backend?name="Bohdan Rak"&group="FEP23"&subgroup="Subgroup 2"#w1nzeen
+encoded url: course://web.backend?name=%22Bohdan%20Rak%22&group=%22FEP23%22&subgroup=%22Subgroup%202%22#w1nzeen    
+
+Second task(1 variant): https://bank.gov.ua/NBU_Exchange/exchange_site?json&start=20220707&end=20220719&valcode=usd
