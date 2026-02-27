@@ -6,6 +6,9 @@ program
 .option('-o, --output <path>', 'шлях до файлу для запису')
 .option('-d, --display', 'вивести у консоль')
 
+.option('-m, --mfo', 'відображати код МФО банку')
+.option('-n, --normal', 'відображати лише працюючі банки з кодом 1');
+
 program.parse(process.argv);
 const options = program.opts();
 
