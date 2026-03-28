@@ -1,0 +1,4 @@
+curl.exe http://127.0.0.1:3000/200 --output cat200.jpg
+curl.exe -X PUT http://127.0.0.1:3000/200 --data-binary "@cat200.jpg"
+curl.exe -X PUT http://127.0.0.1:3000/200 --data-binary "@200.jpg"
+curl.exe -X DELETE -i http://127.0.0.1:3000/200
