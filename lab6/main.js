@@ -235,7 +235,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.use((req, res) => {
   res.sendStatus(404);
 });
