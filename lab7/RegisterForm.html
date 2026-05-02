@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+<body>
+  <div class="container">
+    <h2>Inventory Registration</h2>
+
+    <form id="register-form">
+      <label>Name:</label>
+      <input type="text" name="inventory_name" id="inventory_name">
+
+      <label>Description:</label>
+      <textarea name="description" id="description"></textarea>
+
+      <label>Photo:</label>
+      <div class="file-input-wrapper">
+        <input type="file" name="photo" id="photo" class="file-input-hidden">
+        <label for="photo" class="file-input-label">
+          <span class="file-input-btn">Choose file</span>
+          <span class="file-input-name" id="file-name">No file chosen</span>
+        </label>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div id="status" class="status hidden"></div>
+  </div>
+
+  <script>
+    document.getElementById('photo').addEventListener('change', function () {
+      const name = this.files[0] ? this.files[0].name : 'No file chosen';
+      document.getElementById('file-name').textContent = name;
+    });
+
+    document.getElementById('register-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const statusEl = document.getElementById('status');
+      statusEl.className = 'status hidden';
+
+      const formData = new FormData();
+      formData.append('inventory_name', document.getElementById('inventory_name').value);
+      formData.append('description', document.getElementById('description').value);
+      const photoFile = document.getElementById('photo').files[0];
+      if (photoFile) formData.append('photo', photoFile);
+
+      try {
+        const res = await fetch('/register', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (res.ok) {
+          statusEl.className = 'status status--success';
+          statusEl.textContent = 'Success';
+          this.reset();
+          document.getElementById('file-name').textContent = 'No file chosen';
+        } else {
+          statusEl.className = 'status status--error';
+          statusEl.textContent = 'Failed';
+        }
+      } catch (err) {
+        statusEl.className = 'status status--error';
+        statusEl.textContent = 'Failed';
+      }
+    });
+  </script>
+</body>
+</html>
