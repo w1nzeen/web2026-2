@@ -1,21 +1,26 @@
 {
-  "name": "lab6",
+  "name": "lab7",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-  "dev": "nodemon main.js --host localhost --port 3000 --cache ./cache"
+    "dev": "nodemon --inspect main.js",
+    "db:migrate": "prisma migrate deploy",
+    "db:studio": "prisma studio"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^6.0.0",
     "commander": "^14.0.3",
+    "dotenv": "^16.4.5",
     "express": "^5.2.1",
     "multer": "^2.1.1",
     "superagent": "^10.3.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "prisma": "^6.0.0"
   }
 }
